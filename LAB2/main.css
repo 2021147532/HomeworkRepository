@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR%display=swap');
+
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+    background-size: cover;
+    content: "";
+    position: absolute;
+    background-color: rgba(0,0,0,.7);
+    font-size: 20px; color: #fff;
+    text-align: center;
+    margin-bottom: 60px;
+}

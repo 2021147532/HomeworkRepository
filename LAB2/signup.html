@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1> Welcome to INTERNET-PROGRAMMING SHOP</h1>
+    <input type="button" onclick="http://127.0.0.1:5500/login.html" value="로그인">
+    <input type="button" value="회원가입">
+ 
+    
+    <hr>
+    개인정보(필수) <br>
+    이름 : <input type="text" name ="st_name" required> (이름은 반드시 입력해야 해요!)>
+    <br>
+    생일 : <input type="date">
+    <br>
+    학번 : <input type="number" name = "st_num" autofocus>
+    <br>
+    나이: <input type="number" name="age" min="1" max="120" step="1">
+    <br>
+    이메일 : <input type="email" name="email"
+    pattern="[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*" title="이메일 양식">
+    <br>
+    아이디 : <input type="text" name ="st_id">
+    <br>
+    비밀번호 : <input type="password" name="password" 
+    placeholder="안전한 비밀번호를 설정하세요.">
+    <br>
+    <p><input type="submit" value="Sign up"></p>
+    <p><input type="submit" value="Cancel"></p>
+    <!--Signup 버튼 / Cancel 버튼-->
+    <hr>
+
+</body>
+</html>
