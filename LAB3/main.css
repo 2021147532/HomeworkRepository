@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: row; /*가로정렬*/
+    justify-content: space-around /*좌우 여백 일정*/
+}
+
+.wrap header{
+    background-color: bisque;
+    width: auto;
+    height: 100px;
+    border : 5px dashed orange ;
+}
+
+.wrap header h3{
+    width: fit-content;
+    font-size: 30px;
+    animation-name: moving;
+    animation-duration: 2s;
+    border-bottom: solid;
+}
+
+@keyframes moving {
+    from {
+        margin-left: 1020px;
+    }
+  
+    to {
+        margin-left:0;
+    }
+  }
+
+.wrap{
+    display: flex;
+    width: 1020px; /*보이는 요소들이 1020px내에 존재하도록*/
+    height: auto;
+    background-color: beige;
+    flex-direction: column;
+}
+
+.wrap nav{
+    width: auto;
+    height: fit-content;
+    background-color: bisque;
+    display: flex;
+    padding: 10px;
+    border : 5px dashed orange ;
+}
+
+.wrap nav ol{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around
+}
+
+.wrap nav ol li{
+    font-size: 22px;
+    border: 5px dashed orange ;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    list-style-type: none;
+}
+
+.items{
+    border: 5px dashed orange ;
+}
+
+.items p{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.items table{
+    margin: auto;
+}
+.items .item360{
+    margin: 20px;
+    border: 5px dashed orange ;
+}
+
+.items .itemsizeup{
+    margin: 20px;
+    border: 5px dashed orange ;
+}
+
+.items .item360 img{
+    margin: 20px;
+    width: 380px;
+    height: 380px;
+    transition: transform 2s;
+}
+.items .item360 img:hover{
+    transform:rotate(360deg); 
+}
+
+
+.items .itemsizeup img{
+    margin: 20px;
+    width: 380px;
+    height: 380px;
+    transition: transform 2s;
+}
+.items .itemsizeup img:hover{
+    transform:scale(1.1,1.1); 
+}
+
+.items table .info{
+    text-align: center;
+    font-size: 20px;
+}

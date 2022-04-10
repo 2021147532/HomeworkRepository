@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="wrap">
+        <h1> 🌼Welcome to FLOWER SHOP-회원가입🌼</h1>
+        
+        <nav>
+            <ol>
+                <li><a link rel="import" href="login.html">로그인</a></li>
+                <li><a link rel="import" href="signup.html">회원가입</a></li>
+            </ol>
+        </nav>
+     
+        
+        <br>
+        <p>[ 개인정보(필수) ]</p> 
+        ✅ 이름 : <input type="text" name ="st_name" placeholder="이름은 반드시 입력해야 해요!"required>
+        <br>
+        ✅ 생일 : <input type="date">
+        <br>
+        ✅ 학번 : <input type="number" name = "st_num" autofocus>
+        <br>
+        ✅ 나이: <input type="number" name="age" min="1" max="120" step="1">
+        <br>
+        ✅ 이메일 : <input type="email" name="email"
+        pattern="[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*" title="이메일 양식">
+        <br>
+        ✅ 아이디 : <input type="text" name ="st_id">
+        <br>
+        ✅ 비밀번호 : <input type="password" name="password" 
+        placeholder="안전한 비밀번호를 설정하세요.">
+        <br>
+        <nav>
+            <ol>
+                <li><input type="submit" value="Sign up"></li>
+                <li><input type="submit" value="Cancel"></li>
+            </ol>
+        </nav>
+        <!--Signup 버튼 / Cancel 버튼-->
+        <br>
+    </div>
+    
+
+</body>
+</html>
