@@ -6,6 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce</title>
     <link rel="stylesheet" href="main.css">
+    <script>
+    let counter=4
+    fetch('product.json')
+    .then((response) => {
+        return response.json()})
+    .then( json => {
+        initialize(json)})
+    .catch(error=>{
+        console.log('Error:',error)
+    });
+
+    function initialize(products) {
+    const category = document.getElementById('category')
+    const searchTerm = document.getElementById('search');
+    const searchBtn = document.getElementById('searchButton');
+    const main = document.querySelector('main');
+
+    searchBtn.onclick = selectCategory;
+
+    function selectCategory(e) {
+        e.preventDefault();
+
+        categoryGroup = [];
+        finalGroup = [];
+
+        if(category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+            return;
+        } else {
+            lastCategory = category.value;
+            lastSearch = searchTerm.value.trim();
+
+            if(category.value === 'All') {
+                categoryGroup = products;
+                selectProducts();
+            } else {
+                if(products.type == category.value){
+                    categoryGroup.push(products);
+                }
+                selectProducts();
+            }
+        }
+    }
+}
+
+window.addEventListener('scroll', () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if(clientHeight + scrollTop >= scrollHeight - 3) {
+        load();
+    }
+});
+    </script>
 </head>
 <body>
     <div class="wrap">
@@ -28,30 +79,77 @@
 
 <div class="wrap2">
         <div class="container">
-            <p>판매 물품은 4 종류 입니다.</p>
-            <p>최소 주문량은 10 송이 입니다.</p>
+            <p>판매 물품은 4 종류이며, 종류 별로 1 송이 판매와 10 송이 set 할인 판매가 있습니다.</p>
+                        <!---->
+            <div class="main">
+                <aside class="sideBar">
+                    <form>
+                        <div class="search">
+                            <label for="category">꽃 종류를 고르세요. :</label>
+                            <select id="category">
+                                <option selected>ALL</option>
+                                <option>튤립</option>
+                                <option>라넌큘러스</option>
+                                <option>라벤더</option>
+                                <option>겹벚꽃</option>
+                            </select>
+                        </div>
+                        <div class="search">
+                            <label for="search">검색 키워드(꽃 종류)를 입력하세요. :</label>
+                            <input type="text" id="search">
+                        </div>
+                        <div class="search">
+                            <button id="searchButton">검색 결과 확인하기</button>
+                        </div>
+                    </form>
+                </aside>
+                <main class="items">
+                </main>
+            </div>
+            <!---->
+            <p>상품 이미지 클릭시 상품 설명을 확인하실 수 있습니다.</p>
                 <div class="item360">
                     <img src="튤립.PNG" alt="튤립 사진">
                     
-                    <h4>튤립 : 한 송이 1000원(회전)</h4>
+                    <h4>튤립 1송이(회전)</h4>
                 </div>
                 <div class="item360">
                     <img src="라넌큘러스.PNG" alt="라넌큘러스 사진">
                     
-                    <h4>라넌큘러스 : 한 송이 1500원(회전)</h4>
+                    <h4>라넌큘러스 1송이(회전)</h4>
                 </div>
                 <div class="itemsizeup">
                     <img src="라벤더.PNG" alt="라벤더 사진">
                  
-                    <h4>라벤더 : 한 송이 700원(확대)</h4>
+                    <h4>라벤더 1송이(확대)</h4>
                 </div>
                 <div class="itemsizeup">
                     <img src="겹벚꽃.PNG" alt="겹벚꽃 사진">
                    
-                    <h4>겹벚꽃 : 한 송이 1200원(확대)</h4>
+                    <h4>겹벚꽃 1송이(확대)</h4>
+                </div>
+                <div class="item360">
+                    <img src="튤립.PNG" alt="튤립 사진">
+                    
+                    <h4>튤립 10송이set(회전)</h4>
+                </div>
+                <div class="item360">
+                    <img src="라넌큘러스.PNG" alt="라넌큘러스 사진">
+                    
+                    <h4>라넌큘러스 10송이set(회전)</h4>
+                </div>
+                <div class="itemsizeup">
+                    <img src="라벤더.PNG" alt="라벤더 사진">
+                 
+                    <h4>라벤더 10송이set(확대)</h4>
+                </div>
+                <div class="itemsizeup">
+                    <img src="겹벚꽃.PNG" alt="겹벚꽃 사진">
+                   
+                    <h4>겹벚꽃 10송이set(확대)</h4>
                 </div>
         </div>
-        <br>
+
         <div class ="info">
             <h2>안녕하세요. 플라워샵입니다.</h2>
             저희 플라워샵은 농약과 화학비료를 사용하지 않고, 특상품만을 고집합니다. 안전 배송으로 건강하게 자란 식물을 만나보실 수 있습니다. 단체 주문 환영합니다.

@@ -105,15 +105,14 @@ body{
     display: flex;
     flex: vertical; /**vertical**/
     flex-wrap:wrap;
+}
 
-    p{
-        background-color: aqua;
-        font-size: 20px;
-        font-weight: bold;
-        display: flex;
-        flex:horizontal;
-    }
-
+.wrap p{
+    background-color: aqua;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex:horizontal;
 }
 
 .container{
